@@ -1,6 +1,5 @@
 module Spree
   class StockRequestsController < StoreController
-    layout false
 
     def new
       @stock_request = StockRequest.new(stock_request_params)
@@ -9,10 +8,10 @@ module Spree
     def create
       @stock_request = StockRequest.new(stock_request_params)
       @stock_request.email = try_spree_current_user.email if try_spree_current_user
-
+      @stock_request.variant_id = params[:variant_id]
       respond_to do |format|
         if @stock_request.save
-          format.html { redirect_to root_path, notice: Spree.t(:successful_stock_request) }
+          format.html { redirect_to :back,  notice: successful_stock_request }
           format.js
           format.json { render json: { status: 201, message: Spree.t(:successful_stock_request) } }
         else
@@ -25,7 +24,7 @@ module Spree
     private
 
     def stock_request_params
-      params.require(:stock_request).print(permitted_attributes.stock_request_attributes)
+      params.permit(:stock_request)
     end
   end
 end
