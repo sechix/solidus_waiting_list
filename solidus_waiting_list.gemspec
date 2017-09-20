@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.has_rdoc = false
 
   s.add_dependency 'solidus_core'
-  s.add_dependency 'haml', '~> 4.0.6'
+  s.add_dependency 'haml', '~> 5.0.0.beta.2'
 
   s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'coffee-rails'
