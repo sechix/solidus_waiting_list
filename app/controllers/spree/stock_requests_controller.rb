@@ -11,7 +11,7 @@ module Spree
       @stock_request.variant_id = params[:variant_id]
       respond_to do |format|
         if @stock_request.save
-          format.html { redirect_to :back,  notice: Spree.t(:successful_stock_request) }
+          format.html {  redirect_to request.referrer,  notice: Spree.t(:successful_stock_request) }
           format.js
           format.json { render json: { status: 201, message: Spree.t(:successful_stock_request) } }
         else
