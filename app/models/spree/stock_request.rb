@@ -21,7 +21,7 @@ module Spree
     private
 
     def send_email
-      UserMailer.back_in_stock(self).deliver
+      NotificationsMailer.back_in_stock(self).deliver_now
     end
 
   end
