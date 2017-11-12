@@ -7,7 +7,7 @@ module Spree
 
 
       available = count_on_hand_was <= 0 && count_on_hand > 0 && count_on_hand_changed?
-      if available
+      if available and stock_location.name != 'cleaning'
         variant.notify_waiting_list
       end
     end
