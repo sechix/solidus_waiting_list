@@ -7,7 +7,6 @@ module Spree
 
     def create
       @stock_request = StockRequest.new(stock_request_params)
-      @stock_request.email = try_spree_current_user.email
       if try_spree_current_user
         @stock_request.email = try_spree_current_user.email
       else
