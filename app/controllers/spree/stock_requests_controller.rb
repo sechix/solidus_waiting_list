@@ -7,7 +7,14 @@ module Spree
 
     def create
       @stock_request = StockRequest.new(stock_request_params)
-      @stock_request.email = try_spree_current_user.email if try_spree_current_user
+      @stock_request.email = try_spree_current_user.email
+      if try_spree_current_user
+        @stock_request.email = try_spree_current_user.email
+      else
+        @stock_request.email = params[:stock_request][:email]
+      end
+
+
       @stock_request.variant_id = params[:variant_id]
       respond_to do |format|
         if @stock_request.save
