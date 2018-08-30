@@ -1,4 +1,4 @@
-Spree::Core::Engine.routes.draw do
+Spree::Core::Engine.routes.prepend do
   resources :stock_requests
 
   namespace :admin do
