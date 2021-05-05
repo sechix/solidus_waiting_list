@@ -12,7 +12,7 @@
 <%= content_for :table_filter do %>
   <%= render :partial => 'spree/admin/shared/stock_report_criteria', :locals => {} %>
 <% end %>
-<%= content_for :table do %>
+<div>
   <table class=".admin-report" data-hook="stock_requests">
     <thead>
     <tr>
@@ -36,4 +36,4 @@
       <% end %>
     </tbody>
   </table>
-<% end %>
+</div>
