@@ -1,16 +1,18 @@
 <%= content_for :page_title do %>
   <%= I18n.t('spree.stock_requests') %>
-  <%= content_for :page_actions do %>
-     <li>
-       <%= link_to_with_icon 'icon-arrow-left', I18n.t('spree.back_to_reports_list'), spree.admin_reports_url, :class => 'button' %>
-     </li>
-  <% end %>
-  <%= content_for :table_filter_title do %>
-    <%= I18n.t('spree.date_range') %>
-  <% end %>
-  <%= content_for :table_filter do %>
-    <%= render :partial => 'spree/admin/shared/stock_report_criteria', :locals => {} %>
-  <% end %>
+<% end %>
+<%= content_for :page_actions do %>
+  <li>
+    <%= link_to_with_icon 'icon-arrow-left', I18n.t('spree.back_to_reports_list'), spree.admin_reports_url, :class => 'button' %>
+  </li>
+<% end %>
+<%= content_for :table_filter_title do %>
+  <%= I18n.t('spree.date_range') %>
+<% end %>
+<%= content_for :table_filter do %>
+  <%= render :partial => 'spree/admin/shared/stock_report_criteria', :locals => {} %>
+<% end %>
+<%= content_for :table do %>
   <table class=".admin-report" data-hook="stock_requests">
     <thead>
     <tr>
