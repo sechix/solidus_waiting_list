@@ -31,7 +31,7 @@
           <td><%= link_to stock_request.product.name, edit_admin_product_path(stock_request.product) %></td>
           <td><%= stock_request.variant.options_text if stock_request.variant %></td>
           <td><%= stock_request.status.titleize %></td>
-          <td><%= time_ago_in_words(stock_request.created_at) %><%= I18n.t('spree.ago') %></td>
+          <td><%= time_ago_in_words(stock_request.created_at) %> <%= I18n.t('spree.ago') %></td>
         </tr>
       <% end %>
     </tbody>
