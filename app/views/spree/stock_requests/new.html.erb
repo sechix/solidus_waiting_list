@@ -3,7 +3,7 @@
 <%= render "spree/shared/error_messages", target: @stock_request %>
 <%= form_for @stock_request do |f| %>
    <%= hidden_field_tag :variant_id, params[:variant_id] %>
-    <div class="text-align-center">
+    <h4 class="text-align-center">
       <%= f.label :email %>
       <% if spree_current_user %>
         <%= spree_current_user.email %>
@@ -11,7 +11,7 @@
         <%= f.text_field :email %>
       <% end %>
       <div class="text-align-center">
-        <%= f.submit Spree.t(:submit_stock_request) , :class => "highlight-button btn btn-medium button" %>
+        <%= f.submit I18n.t('spree.submit_stock_request') , :class => "highlight-button btn btn-medium button" %>
       </div>
-    </div>
+    </h4>
 <% end %>
